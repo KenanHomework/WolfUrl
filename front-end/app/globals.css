@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,body{
+  width: 100dvw;
+  height: 100dvh;
+  background-color: #f5f6f7;
+  overflow-y: hidden;
+}
+
+.smooth-animation{
+  @apply transition-all duration-75 ease-in
+}
+
+.underline-animation {
+  @apply inline-block relative;
+}
+
+.underline-animation:after {
+  @apply content-[""] block h-0.5 absolute w-0 left-2/4 bottom-0;
+  background: none repeat scroll 0 0 currentColor;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+
+.underline-animation:hover:after {
+  @apply w-full left-0;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 12px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 24px;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 24px;
+  background-color: #c7c7c7;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #747775;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #747775;
+}
